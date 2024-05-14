@@ -6,7 +6,12 @@
     <title>{{ post.title }}</title>
 </head>
 <body>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.content }}</p>
+    <h1>제목 : {{ post.title }}</h1>
+    <p>내용 : {{ post.content }}</p>
+    {% for image in images %}
+        <img src = "{{image.image.url}}" alt="Image">
+    {% endfor %}
+
+    <button><a href="{% url 'list' %}">목록</a></button>
 </body>
 </html>
