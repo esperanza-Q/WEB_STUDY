@@ -8,9 +8,16 @@
         <table>
         {% for list in postlist %}
             <ul>
-                <li><a href="{{list.pk}}/">{{list.postname}}</a></li>
+
+                {% comment %} 수정 {% endcomment %}
+                <li><a href="{% url 'posting' list.id %}">{{list.postname}}</a></li>
+
             </ul>
         {% endfor %}
+
+        {% comment %} 수정 {% endcomment %}
+        <a href="{% url 'new_post' %}"><button>글 작성</button>
+        
         </table>
     </body>
 </html>

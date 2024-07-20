@@ -11,7 +11,10 @@
             <input type="text" name="postname"><br>
             내용<br>
             <textarea rows="10" cols="50" name="contents"></textarea><br>
-            <input type="submit" value="글쓰기">
+
+            {% comment %} 수정 {% endcomment %}
+            <a href="{% url 'blog' %}"><input type="submit" value="글쓰기"></a>
+            
         </form>
     </body>
 </html>
