@@ -1,4 +1,6 @@
+# 수정
 from django.shortcuts import render, get_object_or_404, redirect
+
 # View에 Model(Post 게시글) 가져오기
 from .models import Post
 
