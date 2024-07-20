@@ -42,3 +42,21 @@ def new_post(request):
             return redirect('blog')
     else:
         return render(request, 'new_post.html')
+        
+#혹시나 글 목록에 제목들이 ('제목'),로 나오는 경우 추가로 해야할 것 :
+#cmd창에 프로젝트까지 들어간 상태에서
+#python manage.py shell
+#이후 나오는 >>부분에 밑에 코드들 작성
+#from main.models import Post
+#for post in Post.objects.all():
+#    print(post.postname, type(post.postname))
+#위 코드 작성하고 엔터. 이때, ('제목',) <class 'tuple'> 이런 식으로 뜨면, 밑에 코드들 이어 작성(만약 tuple 자리에 string 또는 str이 뜨면 코드 자체를 잘못 작성한 거거나 그 이외의 오류.)
+#for post in Post.objects.all():
+#   if isinstance(post.postname, tuple):
+#       post.postname = post.postname[0]  # 튜플의 첫 번째 요소를 문자열로 저장
+#       post.save()
+#코드 작성 후 엔터.
+#for post in Post.objects.all():
+#   print(post.postname, type(post.postname))
+#코드 작성 후 엔터. 이때 <class 'string'> 또는 <class 'str'> 뜨면 된 것.
+#다시 마이그레이션하고 실행시키면 제목이 제대로 저장되는 것 확인할 수 있음.
